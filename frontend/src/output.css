@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+    h1 {
+      @apply text-2xl;
+    }
+    h2 {
+      @apply text-xl;
+    }
+    hr {
+        @apply my-4
+    }
+
+
+    /* ... */
+  }
+
+  @layer components {
+    .product-name{
+        /* @apply text-xl font-bold text-slate-500 mt-4 */
+    }
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+  color: #805c2e;
+}
+
+.swiper-pagination-progressbar 
+.swiper-pagination-progressbar-fill{
+  background: #ab6908 !important;
+}
