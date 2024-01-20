@@ -122,7 +122,7 @@ const ProductScreen = () => {
               <div>
                 <div
                   className="w-64 grid grid-cols-2 gap-2 border mx-auto 
-                rounded-md shadow-lg px-6 py-6 text-sm"
+                rounded-md shadow-lg px-6 py-6 text-sm mt-4"
                 >
                   <p>Price:</p>
                   <p>${product.price}</p>
@@ -172,7 +172,7 @@ const ProductScreen = () => {
 
 
             {/* WRITE REVIEWS FOR PRODUCT  */}
-            <div className="mt-10 grid grid-cols-2">
+            <div className="mt-10 md:grid md:grid-cols-2">
               <div>
                 <h2
                   className="text-4xl font-bold leading-9 tracking-tight text-gray-600
