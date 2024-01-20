@@ -36,8 +36,6 @@ const Header = () => {
     }
   };
 
-  console.log(cartItems)
-
   return (
     <>
       <div className="md:flex justify-between items-center px-8 py-4 bg-gray-200">

@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import {
+  useDeliverOrderMutation,
   useGetOrderDetailsQuery,
   useGetPayPalClientIdQuery,
   usePayOrderMutation,
@@ -9,6 +10,7 @@ import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
 import { usePayPalScriptReducer, PayPalButtons } from "@paypal/react-paypal-js";
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const OrderScreen = () => {
   const { id: orderId } = useParams();
@@ -20,9 +22,15 @@ const OrderScreen = () => {
     isLoading,
     error,
   } = useGetOrderDetailsQuery(orderId);
-//   console.log('order', order);
 
-  const [payOrder, { isLoading: loadingPay }] = usePayOrderMutation();
+  const [payOrder, { isLoading: loadingPay }] = 
+    usePayOrderMutation();
+
+  const [deliverOrder, { isLoading: loadingDeliver }] =
+    useDeliverOrderMutation();
+    // console.log(order.isDelivered)
+
+  const { userInfo } = useSelector((state) => state.auth);
 
   //PAYPAL FUNCTION-------------------------------------------------
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
@@ -57,11 +65,11 @@ const OrderScreen = () => {
     }
   }, [order, paypalDispatch, paypal, loadingPayPal, errorPayPal]);
 
-//   async function onApproveTest() {
-//     await payOrder({ orderId, details: { payer: {} } });
-//     refetch();
-//     toast.success("Order is paid");
-//   }
+  //   async function onApproveTest() {
+  //     await payOrder({ orderId, details: { payer: {} } });
+  //     refetch();
+  //     toast.success("Order is paid");
+  //   }
 
   function onApprove(data, actions) {
     return actions.order.capture().then(async function (details) {
@@ -96,6 +104,18 @@ const OrderScreen = () => {
   }
 
   //-----------------------------------------------------------------
+  const deliverOrderHandler = async() => {
+    try {
+      await deliverOrder(orderId);
+      refetch();
+      toast.success('Order delivered')
+    } catch (error) {
+      toast.error(error?.data?.message || error.message)
+    }
+  }
+
+
+
 
   return isLoading ? (
     <Spinner />
@@ -192,7 +212,6 @@ const OrderScreen = () => {
         {/* ORDER SUMMARY  */}
         <div className="col-span-2 mx-8">
           <div className="border rounded shadow">
-
             <div className="border-b ">
               <h2 className="font-bold m-6">Order Summary</h2>
             </div>
@@ -242,6 +261,22 @@ const OrderScreen = () => {
                 </div>
               )}
             </div>
+
+            {/* MARK AS DELIVERED PLACEHOLDER  */}
+            {loadingDeliver && <Spinner/>}
+            {userInfo && userInfo.isAdmin && order.isPaid && 
+            !order.isDelivered && (
+              <div className="p-6 border-t">
+                <button
+                type="button"
+                onClick={deliverOrderHandler}
+                className="p-3 rounded bg-gray-700 text-white
+                hover:bg-gray-600 transition duration-150 ease-linear"
+                >
+                  Mark As Delivered
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
