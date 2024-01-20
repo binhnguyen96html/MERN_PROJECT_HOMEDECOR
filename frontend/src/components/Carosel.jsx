@@ -35,8 +35,8 @@ const Carosel = () => {
             }}
           ></div>
           <div 
-          className="absolute bottom-0 left-0 right-0 h-24 pt-3
-          bg-black text-white text-5xl text-center opacity-50">
+          className="text-2xl pt-5 px-3 absolute bottom-0 left-0 right-0 h-24
+          bg-black text-white md:text-5xl text-center opacity-50">
             {`${product.name} ($${product.price})`}
         </div>
         </SwiperSlide>

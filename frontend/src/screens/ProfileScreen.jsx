@@ -52,8 +52,8 @@ const ProfileScreen = () => {
   };
 
   return (
-    <div className="px-8 grid grid-cols-4">
-      <div className="col-span-1">
+    <div className="px-8 grid grid-cols-1 md:grid-cols-4 ">
+      <div className="md:col-span-1">
         <h1 className="mb-4">User Profile</h1>
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form onSubmit={submitHandler} className="space-y-2">
@@ -131,8 +131,8 @@ const ProfileScreen = () => {
         </div>
       </div>
 
-      <div className="col-span-3 ml-6">
-        <h1 className="mb-4">My Orders</h1>
+      <div className="text-center mt-12 md:col-span-3 ml-6">
+        <h1 className="mb-6">My Orders</h1>
 
         {isLoading ? (
           <Spinner />

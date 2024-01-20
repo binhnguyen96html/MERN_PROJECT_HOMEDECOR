@@ -49,7 +49,8 @@ const Header = () => {
           </div>
         </Link>
 
-        <div className="md:flex gap-4 text-2xl mt-4 items-center">
+        <div className="flex flex-col md:flex md:flex-row mt-4 gap-4 text-2xl items-center">
+          
           {/* SEARCH BOX */}
           <div className="mr-6 max-w-56">
             <SearchBox />
