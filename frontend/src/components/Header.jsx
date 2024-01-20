@@ -50,7 +50,6 @@ const Header = () => {
         </Link>
 
         <div className="flex flex-col md:flex md:flex-row mt-4 gap-4 text-2xl items-center">
-          
           {/* SEARCH BOX */}
           <div className="mr-6 max-w-56">
             <SearchBox />
@@ -207,9 +206,11 @@ const Header = () => {
                 <DropdownItem onClick={logoutHandler}>Sign out</DropdownItem>
               </Dropdown>
             ) : (
-              <Link to="/login">
-                <FiLogIn className="mt-2" />
-              </Link>
+              <div className="flex justify-center">
+                <Link to="/login">
+                  <FiLogIn/>
+                </Link>
+              </div>
             )}
           </div>
         </div>
