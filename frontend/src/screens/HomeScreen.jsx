@@ -9,6 +9,8 @@ import { useGetProductsQuery } from "../slices/productsApiSlice";
 import Paginate from "../components/Paginate";
 import { Link } from "react-router-dom";
 import Carosel from "../components/Carosel";
+import FooterComponent from "../components/FooterComponent";
+
 
 const HomeScreen = () => {
   const { pageNumber, keyword } = useParams();
@@ -71,6 +73,7 @@ const HomeScreen = () => {
           />
         </>
       )}
+      <FooterComponent />
     </>
   );
 };

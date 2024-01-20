@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,js,jsx}",
+    "./src/**/*.{html,js,jsx,tsx}",
+    'node_modules/flowbite-react/lib/esm/**/*.js',
     // "./src/components/**/*.{js, jsx}"
   ],
   theme: {
@@ -20,7 +21,9 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
   variants: {
     extend: {
       backgroundColor: ['even', 'odd'],

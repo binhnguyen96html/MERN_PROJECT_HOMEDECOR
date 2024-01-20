@@ -6,7 +6,7 @@ import { FaTimes } from "react-icons/fa";
 
 const OrderListScreen = () => {
   const { data: orders, isLoading, error } = useGetOrdersQuery();
-  // console.log(orders);
+  console.log(orders);
 
   return (
     <div className="mx-10">
@@ -67,7 +67,7 @@ const OrderListScreen = () => {
                     </td>
                     <td className="px-6 py-4">
                       {order.isDelivered ? (
-                        order.deliveredAt.substring(0,10)
+                        order.deliveredAt.toString()
                       ) : (
                         <FaTimes className="text-red-500" />
                       )}
