@@ -23,7 +23,7 @@ const Header = () => {
 
   const [logoutApiCall] = useLogoutMutation();
 
-  const totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0);
+  // const totalCartItems = cartItems.reduce((acc, item) => acc + item.qty, 0);
 
   const logoutHandler = async () => {
     try {
@@ -35,6 +35,8 @@ const Header = () => {
       toast.error(error);
     }
   };
+
+  console.log(cartItems)
 
   return (
     <>
@@ -60,12 +62,12 @@ const Header = () => {
             <Link to="/cart" className="text-gray-700">
               <FaShoppingCart />
             </Link>
-            {totalCartItems > 0 && (
+            {cartItems.length > 0 && (
               <div
                 className="border -mt-1 absolute text-xs right-0 top-0 z-50 bg-red-400
             rounded-full w-5 h-5 flex items-center justify-center"
               >
-                <p className="text-white">{totalCartItems}</p>
+                <p className="text-white">{cartItems.reduce((acc, item) => acc + item.qty, 0)}</p>
               </div>
             )}
           </div>
