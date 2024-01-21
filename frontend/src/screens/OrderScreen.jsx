@@ -128,7 +128,7 @@ const OrderScreen = () => {
       </h1>
 
       <div className="md:grid md:grid-cols-5">
-        <div className="col-span-3">
+        <div className="md:col-span-3">
           {/* SHIPPING  */}
           <div className="border-b mb-4">
             <h2 className="font-bold">Shipping</h2>
@@ -210,10 +210,11 @@ const OrderScreen = () => {
         </div>
 
         {/* ORDER SUMMARY  */}
-        <div className="col-span-2 mx-8 mt-8">
+        <div className="md:col-span-2 md:mx-8 mt-8">
           <div className="border rounded shadow p-4 overflow-hidden">
+            
             <div className="border-b ">
-              <h2 className="font-bold m-6">Order Summary</h2>
+              <h2 className="font-bold m-4">Order Summary</h2>
             </div>
 
             <div className="border-b py-4 text-sm text-gray-900">
@@ -236,14 +237,14 @@ const OrderScreen = () => {
             </div>
 
             {/* PAY ORDER PLACEHOLDER  */}
-            <div>
+            <div className="overflow-hidden p-6">
               {!order.isPaid && (
                 <div>
                   {loadingPay && <Spinner />}
                   {isPending ? (
                     <Spinner />
                   ) : (
-                    <div className="px-6 md:px-0">
+                    <div>
                       {/* <button
                         onClick={onApproveTest}
                         className="p-2 m-2 border rounded"
