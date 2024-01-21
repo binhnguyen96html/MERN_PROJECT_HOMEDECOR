@@ -236,14 +236,14 @@ const OrderScreen = () => {
             </div>
 
             {/* PAY ORDER PLACEHOLDER  */}
-            <div className="p-6">
+            <div>
               {!order.isPaid && (
                 <div>
                   {loadingPay && <Spinner />}
                   {isPending ? (
                     <Spinner />
                   ) : (
-                    <>
+                    <div className="px-6 md:px-0">
                       {/* <button
                         onClick={onApproveTest}
                         className="p-2 m-2 border rounded"
@@ -256,7 +256,7 @@ const OrderScreen = () => {
                         onApprove={onApprove}
                         onError={onError}
                       ></PayPalButtons>
-                    </>
+                    </div>
                   )}
                 </div>
               )}
