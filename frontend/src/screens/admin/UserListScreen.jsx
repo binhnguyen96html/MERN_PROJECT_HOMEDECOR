@@ -43,7 +43,7 @@ const UserListScreen = () => {
         <div className="relative overflow-x-auto scrollbar-hide">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-              <tr className="even:bg-red-200" >
+              <tr className="bg-gray-400 text-white" >
                 <th scope="col" className="px-6 py-3">
                   ID
                 </th>
@@ -65,7 +65,7 @@ const UserListScreen = () => {
               {users.map((user) => (
                 <tr
                   key={user._id}
-                  className="bg-white even:bg-red-200 border-b"
+                  className="bg-white even:bg-gray-100 border-b"
                 >
                   <td className="px-6 py-4">{user._id}</td>
                   <td className="px-6 py-4">

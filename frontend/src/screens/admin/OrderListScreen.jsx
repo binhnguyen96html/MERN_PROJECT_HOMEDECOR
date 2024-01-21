@@ -21,7 +21,7 @@ const OrderListScreen = () => {
           <div className="relative overflow-x-auto scrollbar-hide">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
+                <tr className="bg-gray-400 text-white">
                   <th scope="col" className="px-6 py-3">
                     ID
                   </th>
@@ -48,7 +48,8 @@ const OrderListScreen = () => {
                 {orders.map((order) => (
                   <tr
                     key={order._id}
-                    className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                    className="border-b dark:bg-gray-800 dark:border-gray-700
+                    even:bg-gray-100"
                   >
                     <td className="px-6 py-4">{order._id}</td>
                     <td className="px-6 py-4">

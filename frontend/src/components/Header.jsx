@@ -40,6 +40,7 @@ const Header = () => {
   return (
     <>
       <div className="md:flex justify-between items-center px-8 py-4 bg-gray-200">
+        
         <Link to="/">
           <div className="flex items-center">
             <img src={homelogo} alt="logo" className="h-4 md:h-12 mr-2" />
@@ -56,7 +57,7 @@ const Header = () => {
           </div>
 
           {/* CART  */}
-          <div className="relative w-10 mr-6">
+          <div className="relative w-10 md:mr-6">
             <Link to="/cart" className="text-gray-700">
               <FaShoppingCart />
             </Link>
@@ -73,7 +74,7 @@ const Header = () => {
           </div>
 
           {/* ADMIN  */}
-          <div className="relative w-28">
+          <div className="relative">
             {userInfo && userInfo.isAdmin && (
               // <div>
               //   <div
@@ -145,7 +146,7 @@ const Header = () => {
           </div>
 
           {/* USER  */}
-          <div className="relative w-28 mr-8">
+          <div className="relative md:mr-8">
             {userInfo ? (
               // <div>
               //   <div

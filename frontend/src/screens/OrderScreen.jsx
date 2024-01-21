@@ -127,7 +127,7 @@ const OrderScreen = () => {
         <span className="font-bold">Order:</span> {order._id}
       </h1>
 
-      <div className="grid grid-cols-5">
+      <div className="md:grid md:grid-cols-5">
         <div className="col-span-3">
           {/* SHIPPING  */}
           <div className="border-b mb-4">
@@ -179,7 +179,7 @@ const OrderScreen = () => {
           </div>
 
           {/* ORDER ITEMS  */}
-          <div>
+          <div className="mt-4">
             <h2 className="font-bold">Order Items</h2>
 
             <div className="m-4 border">
@@ -210,7 +210,7 @@ const OrderScreen = () => {
         </div>
 
         {/* ORDER SUMMARY  */}
-        <div className="col-span-2 mx-8">
+        <div className="col-span-2 mx-8 mt-8">
           <div className="border rounded shadow">
             <div className="border-b ">
               <h2 className="font-bold m-6">Order Summary</h2>
