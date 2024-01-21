@@ -211,7 +211,7 @@ const OrderScreen = () => {
 
         {/* ORDER SUMMARY  */}
         <div className="col-span-2 mx-8 mt-8">
-          <div className="border rounded shadow">
+          <div className="border rounded shadow p-4 overflow-hidden">
             <div className="border-b ">
               <h2 className="font-bold m-6">Order Summary</h2>
             </div>

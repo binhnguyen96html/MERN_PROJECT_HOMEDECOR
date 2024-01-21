@@ -75,7 +75,8 @@ const OrderListScreen = () => {
                     </td>
                     <td>
                       <Link to={`/order/${order._id}`}>
-                        <button className="rounded border py-1 px-2 bg-gray-200 text-gray-800 hover:bg-gray-500 transition duration-150 ease-linear">
+                        <button 
+                        className="rounded border mr-6 py-1 px-2 bg-gray-200 text-gray-800 hover:bg-gray-500 transition duration-150 ease-linear">
                           Detail
                         </button>
                       </Link>
